@@ -12,8 +12,15 @@
 
 
 ### 단계
-	1. 피쳐 추출: Dense SFIT로 피쳐의 위치와 정보를 찾고 그 피쳐 정보를 Clustering을 통해 시각적 vocabulary를 만든다.
-	2. X이미지와 Y이미지의 히스토그램을 구하고 두 히스토그램의 최솟값으로 교차점을 찾는다.
-	3. 분할 이미지 셀의 넓이에 반비례하게 가중치를 둔다. (더 작은 셀일수록 공간정보ㅡ를 많이 담고 있으므로 가중치를 높게 둠).
-	4. 그레이 스케일의 이미지의 히스토그램 분포로 SVM 학습함. 
+	1. 피쳐 추출: Dense SFIT로 얻어진 피쳐 정보를 k-means 군집화를 통해 시각적 vocabulary를 만든다.
+	2. X이미지와 Y이미지의 히스토그램을 구하고 두 히스토그램의 최솟값으로 교차점을 찾는다.(-> 커널)
+	3. 분할 이미지 셀의 넓이에 반비례하게 가중치를 둔다. (더 작은 셀일수록 공간정보를 많이 담고 있으므로 가중치를 높게 둠).
+	4. 이미지의 히스토그램 분포를 SVM 분류기로 학습함. 
  
+ 
+ 
+#### 참고
+
+(1) https://github.com/CyrusChiu/Image-recognition  
+(2) https://github.com/wihoho/Image-Recognition/blob/5dc8834dd204e36172815345f0abe5640a4a37ef/recognition/classification.py#L10  
+(3) https://darkpgmr.tistory.com/125
