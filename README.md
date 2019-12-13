@@ -199,7 +199,7 @@ def histogramIntersection(M,N):
   
 ```
 
-1. 8pixel * 8pixel의 DenseSIFT 기술자 추출  
+## 1. 8pixel * 8pixel의 DenseSIFT 기술자 추출  
 ```
 from time import time
 
@@ -223,7 +223,7 @@ print(time()-t0)
 > 456.36689496040344(7분~)
 ```
 
-2. k-means 군집화로 코드북 만들기(K=400)  
+## 2. k-means 군집화로 코드북 만들기(K=400)  
 ```
 t0=time()
 
@@ -236,7 +236,7 @@ print(time()-t0)
 > 808.218183517456(13분~)
 ```
 
-3. 피라미드 쌓기(Level=1)  
+## 3. 피라미드 쌓기(Level=1)  
 ```
 t0=time()
 
@@ -250,7 +250,7 @@ x_train=np.asarray(x_train)
 x_test=np.asarray(x_test)
 ```
 
-4. 피라미드매치 커널을 가진 SVM분류기로 학습  
+## 4. 피라미드매치 커널을 가진 SVM분류기로 학습  
 ```
 t0=time()
 
@@ -268,12 +268,12 @@ time()-t0
 > 936.9802219867706(15분~)
 ```
 
-+ 결과 예측  
+## 결과 예측  
 ```
 predictMatrix=histogramIntersection(x_test,x_train)
 label=clf.predict(predictMatrix)
 ```
-+ 제출형식   
+## 제출형식   
 ```
 result=np.array(label).reshape(-1,1)
 img_list=np.array(img_list).reshape(-1,1)
@@ -282,7 +282,7 @@ total_result=np.hstack([img_list,result])
 df=pd.DataFrame(total_result,columns=["Id","Category"])
 ```
 
-+ csv파일 변환후 확인, 제출  
+## csv파일 변환후 확인, 제출  
 ```
 df.to_csv('results-hrkim-v3.csv',index=False,header=True)
 pd.read_csv('results-hrkim-v3.csv')
