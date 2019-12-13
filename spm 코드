@@ -1,4 +1,4 @@
-```
+<code>
 !ls -lha kaggle.json
 
 !pip uninstall -y kaggle
@@ -22,7 +22,7 @@
 ! yes | pip3 install opencv-python==3.4.2.16
 ! yes | pip3 install opencv-contrib-python==3.4.2.16
 ! yes | pip3 install kmc2
-``` 
+</code>
 
 ## 라이브러리  
 ```
