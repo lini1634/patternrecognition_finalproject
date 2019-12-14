@@ -19,16 +19,19 @@
 
 ### 실험
 
-|codebooksize|pyramid level|svm kernel|score|
-|------------|-------------|---|----|
-|200|2|histogram intersection|0.50591~0.50768|
-|200|2|LinearSVC|0.52482~0.52955|
-|400|1|histogram intersection|0.55673~0.56855|
- 
-#### 참고
+|image color|sift descriptor|codebooksize|pyramid level|svm kernel|svm parameters|score|
+|-----------|---------------|------------|-------------|----------|-------------|------|
+|gray|dense 8 * 8|200|0|SVC|C: 0.001 ~ 1000, gamma: 0.001 ~ 1000|0.37647~0.38238|
+|gray|dense 8 * 8|400|0|SVC|C: 0.001 ~ 1000, gamma: 0.001 ~ 1000|0.40248~0.41725|
+|color|dense 8 * 8|200|2|histogram intersection|C: 0.001 ~ 1000, gamma: 0.001 ~ 1000|0.50591~0.50768|
+|color|dense 8 * 8|200|2|LinearSVC|C: 0.000307~0.001|0.52482~0.52955|
+|color|dense 8 * 8|400|1|histogram intersection|C: 0.001 ~ 1000, gamma: 0.001 ~ 1000|0.55673~0.56855|
+
+
+### 참고
 
 (1) https://github.com/CyrusChiu/Image-recognition  
 (2) https://github.com/wihoho/Image-Recognition/blob/5dc8834dd204e36172815345f0abe5640a4a37ef/recognition/classification.py#L10  
-(3) https://darkpgmr.tistory.com/125
-
+(3) https://darkpgmr.tistory.com/125  
+(4) https://github.com/TrungTVo/spatial-pyramid-matching-scene-recognition/blob/master/spatial_pyramid.ipynb
 
